@@ -1,0 +1,7 @@
+streamlit
+pandas
+duckdb
+plotly
+gspread
+google-auth
+google-auth-oauthlib
