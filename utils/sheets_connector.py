@@ -12,7 +12,9 @@ SCOPES = [
 ]
 
 # Load credentials and authorize client
-creds = Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+import streamlit as st
+creds = Credentials.from_service_account_info(st.secrets["gcp_service_account"], scopes=SCOPES)
+
 client = gspread.authorize(creds)
 
 def get_sheet_data(sheet_name: str) -> pd.DataFrame:
